@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="TestSuite">
+  <test name="TestCaseChrome">	
+  <parameter name="browser" value="Chrome"/> 
+    <classes>
+       <class name="pl.kostek.selenium.testng.grid.TestGrid"/>
+    </classes>
+  </test>
+  <test name="TestCaseFirefox" >	
+  <parameter name="browser" value="Firefox"/> 
+    <classes>
+       <class name="pl.kostek.selenium.testng.grid.TestGrid"/>
+    </classes>
+  </test>
+  <test name="TestCaseInternetExplorer" >	
+  <parameter name="browser" value="IE"/> 
+    <classes>
+       <class name="pl.kostek.selenium.testng.grid.TestGrid"/>
+    </classes>
+  </test>
+  <test name="TestCaseOpera" >	
+  <parameter name="browser" value="Opera"/> 
+    <classes>
+       <class name="pl.kostek.selenium.testng.grid.TestGrid"/>
+    </classes>
+  </test>
+</suite>

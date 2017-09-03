@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>pl.kostek.selenium.testng</groupId>
+  <artifactId>grid</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>grid</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<defaultSuiteFiles>
+        ./tests.xml
+    </defaultSuiteFiles>
+    <suiteFile>${defaultSuiteFiles}</suiteFile>       
+  </properties>
+	<repositories>
+	  <repository>
+	    <id>jcenter</id>
+	    <name>bintray</name>
+	    <url>http://jcenter.bintray.com</url>
+	  </repository>
+	</repositories>
+ 
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-support</artifactId>
+		    <version>3.4.0</version>
+		</dependency>
+	    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-chrome-driver</artifactId>
+		    <version>3.4.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-firefox-driver</artifactId>
+		    <version>3.4.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-ie-driver -->
+		<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-ie-driver</artifactId>
+		    <version>3.4.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-htmlunit-driver -->
+		<!--<dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-htmlunit-driver</artifactId>
+		    <version>2.52.0</version>
+		</dependency> 
+	    <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-api</artifactId>
+            <version>9.3.5.v20151012</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-client</artifactId>
+            <version>9.3.5.v20151012</version>
+        </dependency>
+        <dependency>
+		    <groupId>org.seleniumhq.selenium</groupId>
+		    <artifactId>selenium-remote-driver</artifactId>
+		    <version>3.3.1</version>
+		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+		<!-- <dependency>
+		    <groupId>org.apache.httpcomponents</groupId>
+		    <artifactId>httpclient</artifactId>
+		    <version>4.5.2</version>
+		</dependency> -->
+		<dependency>
+	      <groupId>com.google.guava</groupId>
+	      <artifactId>guava</artifactId>
+	      <version>21.0</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.testng</groupId>
+		  <artifactId>testng</artifactId>
+		  <version>6.10</version>
+		  <!-- <scope>test</scope> -->
+		</dependency>	
+	</dependencies>
+	<profiles>
+	    <profile>
+	        <id>Base configuration</id>
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <build>
+	            <defaultGoal>install</defaultGoal>
+	            <plugins>                    
+	                <plugin>
+	                    <groupId>org.apache.maven.plugins</groupId>
+	                    <artifactId>maven-surefire-plugin</artifactId>
+	                    <version>2.19.1</version>
+	                    <inherited>true</inherited>
+	                    <executions>
+	                        <execution>
+	                            <phase>test</phase>
+	                            <goals>
+	                                <goal>test</goal>
+	                            </goals>
+	                        </execution>
+	                    </executions>
+	                    <configuration>
+	                        <suiteXmlFiles>
+	                            <suiteXmlFile>${suiteFile}</suiteXmlFile>
+	                        </suiteXmlFiles>                            
+	                    </configuration>
+	                </plugin>
+	            </plugins>
+	        </build>
+	    </profile>
+	</profiles>
+</project>
